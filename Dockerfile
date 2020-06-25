@@ -1,6 +1,9 @@
-FROM alpine:3.12.0
+FROM python:3.7-alpine
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache --virtual .build-deps g++ gcc libxml2-dev libxslt-dev \
+    && pip install bikeshed \
+    && apk del .build-deps \
+    && apk add --no-cache libxslt git
 
 COPY entrypoint.sh /entrypoint.sh
 
