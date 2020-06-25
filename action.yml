@@ -1,17 +1,8 @@
 name: 'Publish Bikeshed document'
 description: 'Publish your Bikeshed source to HTML'
-inputs:
-  source:
-    description: 'The filename of the .bs source'
-    required: true
-    default: 'index.bs'
-  destination:
-    description: 'The output filename'
-    required: true
-    default: 'index.html'
 runs:
   using: 'docker'
-  image: 'docker://docker.pkg.github.com/netwerk-digitaal-erfgoed/bikeshed-docker/bikeshed:1.4.4'
+  image: 'docker://netwerkdigitaalerfgoed/bikeshed:1.4.4'
   args:
     - ${{ inputs.source }}
     - ${{ inputs.destination }}
