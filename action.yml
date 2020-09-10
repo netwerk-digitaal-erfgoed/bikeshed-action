@@ -2,7 +2,7 @@ name: 'Publish Bikeshed document'
 description: 'Publish your Bikeshed source to HTML'
 runs:
   using: 'docker'
-  image: 'docker://netwerkdigitaalerfgoed/bikeshed:1.4.4'
+  image: 'docker://netwerkdigitaalerfgoed/bikeshed:1.7.0'
   args:
     - ${{ inputs.source }}
     - ${{ inputs.destination }}
