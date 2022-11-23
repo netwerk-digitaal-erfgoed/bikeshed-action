@@ -4,11 +4,15 @@ inputs:
   source:
     description: 'The source file'
     required: false
-    default: 'index.bs'
+    default: 'dom.bs'
   destination:
     description: 'The destination file'
     required: false
     default: 'index.html'
+  parameters:
+     description: 'carry other parameters'
+     required: false
+     default: '--md-Text-Macro="COMMIT-SHA LOCAL COPY'
 runs:
   using: 'docker'
   image: 'docker://netwerkdigitaalerfgoed/bikeshed:3.10.0'
@@ -17,3 +21,4 @@ runs:
     - spec
     - ${{ inputs.source }}
     - ${{ inputs.destination }}
+    - ${{ inputs.parameters }}
