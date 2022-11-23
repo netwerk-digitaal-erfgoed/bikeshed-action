@@ -4,7 +4,7 @@ inputs:
   source:
     description: 'The source file'
     required: false
-    default: 'dom.bs'
+    default: 'index.bs'
   destination:
     description: 'The destination file'
     required: false
@@ -12,7 +12,7 @@ inputs:
   parameters:
      description: 'carry other parameters'
      required: false
-     default: '--md-Text-Macro="COMMIT-SHA LOCAL COPY'
+     default: ''
 runs:
   using: 'docker'
   image: 'docker://netwerkdigitaalerfgoed/bikeshed:3.10.0'
